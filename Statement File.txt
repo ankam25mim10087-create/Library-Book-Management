@@ -1,0 +1,42 @@
+﻿Project Statement: Simple Library Management System (LMS)
+Problem Statement
+The challenge addressed by this project is the inefficiency and unreliability of manual methods (such as spreadsheets or paper logs) used for managing small-scale book inventories. When a collection grows, tracking the real-time status of each book—specifically whether it is available or checked out—becomes cumbersome. This leads to common issues like:
+1. Time Waste: Slow process for inventory audits and status checks.
+2. Inventory Mismatch: Difficulty in immediately confirming a book's physical location versus its recorded status.
+3. Lack of Data Integrity: No automated mechanism to prevent duplicate entries or accidental data corruption.
+This project offers a simple, digital, and persistent solution to accurately log book records, enforce unique identification (ISBN), and provide instant status checks via a command-line interface.
+Objectives
+The primary goal of this project is to develop a functional command-line application that automates core inventory management tasks. By completing this, the project aims to demonstrate proficiency in the following key technical objectives:
+1. Database Integration and Persistence: Successfully establishing durable data storage using the Python sqlite3 module to ensure all records survive application restarts.
+2. Modular Programming and Architectural Design: Implementing a clear, layered structure (Data Access, Business Logic, and UI) to maximize code maintainability and scalability.
+3. Business Logic Implementation: Enforcing core rules, such as preventing a book from being checked out if it is already unavailable.
+4. Error Handling and Data Integrity: Implementing robust validation to prevent database corruption, particularly by enforcing unique ISBNs.
+Scope of the Project
+The scope is strictly limited to managing the book inventory itself via a Command Line Interface (CLI).
+Core Capabilities (Functional Modules)
+The system is built around three major functional modules:
+Module
+	Core Functionality
+	I. Inventory Management
+	Comprehensive CRUD (Create, Read, Update, Delete) operations for book records (Title, Author, ISBN).
+	II. Loan Status Control
+	Dedicated functions for checking out and returning books, updating the status column reliably.
+	III. Data & Input Validation
+	Handling database integrity errors (unique ISBN constraint) and validating user inputs (e.g., ensuring Book ID is an integer).
+	Exclusions (Out of Scope)
+The project does not include:
+* User authentication or complex security management.
+* Borrower management (tracking who checked out a book or due dates).
+* Advanced reporting or analytics (e.g., overdue book lists).
+* A Graphical User Interface (GUI).
+Target Users
+The system is designed for individuals or small groups who manage a modest book collection and require a dedicated digital tracking solution:
+1. Small Library Administrators: Librarians managing small collections (e.g., in a school classroom or small office).
+2. Personal Book Collectors: Individuals seeking a structured, persistent way to catalog and track their own substantial collection.
+High-Level Features and Non-Functional Characteristics
+The user interacts with the following high-level features, supported by critical non-functional requirements:
+* Usability (NFR): Utilizes a simple, numbered menu and clear tabular output for intuitive interaction.
+* Book Record Creation: Allows input of Title, Author, and ISBN, coupled with Data Integrity (NFR) by enforcing unique ISBNs to prevent duplication.
+* Real-time Inventory Listing: Provides instant, formatted views of all books and their current status.
+* Reliability (NFR): Status changes are managed by single-step checkout/return functions, strictly controlled by Business Logic to prevent state conflicts. Data is persistently stored in library.db.
+* Error Handling (NFR): The system provides specific, helpful messages for invalid record IDs, non-integer inputs, and duplicate data attempts.
